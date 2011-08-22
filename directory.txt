@@ -1,0 +1,32 @@
+Description:
+===========
+
+CSS and style utilities for client side (GWT) widget development.
+
+Use ComputedStyle to get accurate runtime CSS property values from DOM elements, which are normalized for all supported browsers, e.g. you get all dimension values as pixels even if they would be defined as percentages in the stylesheet.
+
+Use CSSRule to get actual CSS property values defined in the stylesheets, i.e. the exact values the author has written in the stylesheet.
+
+You can also create new style rules dynamically using the CSSRule class. This allows you to easy specify some CSS styles for your custom widgets, but also enables the widget users to override any of those values using simple CSS, since your styles are not defined as hard-to-override inline styles.
+
+
+Highlights:
+==========
+
+Get computed style values for an element:
+
+// Gets the computed style for the given element. Re-use the reference as much as possible.
+ComputedStyle cs = new ComputedStyle(getElement());
+
+// Gets the raw string value of a property
+String width = cs.getProperty("width"); // Returns for instance "123px"
+
+// Get the  integer value of a pixel based property
+int width = cs.getIntProperty("width"); // Returns for instance 123
+
+
+Create a new style rule:
+
+CSSRule myRule = CSSRule.create(".new-selector");
+myRule.setProperty("color", "red");
+myRule.setProperty("fontWeight", "bold");
