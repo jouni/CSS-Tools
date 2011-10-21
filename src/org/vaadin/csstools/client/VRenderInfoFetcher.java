@@ -5,7 +5,6 @@ import java.util.HashMap;
 import com.google.gwt.dom.client.Style.Visibility;
 import com.google.gwt.user.client.ui.Widget;
 import com.vaadin.terminal.gwt.client.ApplicationConnection;
-import com.vaadin.terminal.gwt.client.Paintable;
 import com.vaadin.terminal.gwt.client.UIDL;
 import com.vaadin.terminal.gwt.client.ui.VWindow;
 

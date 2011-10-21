@@ -4,7 +4,6 @@ import java.util.Map;
 
 import org.vaadin.csstools.RenderInfo.Callback;
 import org.vaadin.csstools.client.VRenderInfoFetcher;
-import org.vaadin.csstools.client.VRenderInfoFetcher.CssProperty;
 
 import com.vaadin.terminal.PaintException;
 import com.vaadin.terminal.PaintTarget;
@@ -15,6 +14,8 @@ import com.vaadin.ui.Window;
 @ClientWidget(org.vaadin.csstools.client.VRenderInfoFetcher.class)
 class RenderInfoFetcher extends Window {
 
+	private static final long serialVersionUID = 8231652029005092124L;
+	
 	private Component c;
 	private Callback cb;
 	private Object[] props;
