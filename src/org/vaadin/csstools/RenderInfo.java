@@ -42,12 +42,16 @@ public class RenderInfo {
 	 *            Preferably use the {@link CssProperty} enumerable for feasible values.
 	 */
 	public static void get(Component c, Callback cb, Object... props) {
+		get(c.gtApplication().getMainWindow(), c, cb, props);
+	}
+
+	public static void get(Window w, Component c, Callback cb, Object... props) {
 		if (c.getApplication() == null) {
 			throw new IllegalStateException(
 					"The component must be attached to the application before you try to get it's RenderInfo");
 		}
 		RenderInfoFetcher fetcher = new RenderInfoFetcher(c, cb, props);
-		c.getApplication().getMainWindow().addWindow(fetcher);
+		w.addWindow(fetcher);
 	}
 
 	/**
